@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM docker.io/jormar/python3.6-alpine 
 
 MAINTAINER sec@zto.cn
 
@@ -16,7 +16,8 @@ ENV redis_db 0
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
-RUN apk update && apk upgrade && apk add gcc g++ linux-headers python3 python3-dev
+# RUN apk update && apk upgrade && apk add gcc g++ linux-headers wget zlib-dev build-base && wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz && tar xvf Python-3.6.5.tgz && cd Python-3.6.5 && ./configure --enable-optimizations --with-ensurepip=install && make -j 8 && make altinstall
+RUN apk update && apk add gcc g++ linux-headers wget 
 
 COPY . /opt/authcheck
 

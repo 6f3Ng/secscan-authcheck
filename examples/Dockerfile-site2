@@ -4,7 +4,7 @@ MAINTAINER sec@zto.cn
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
-RUN apk update && apk upgrade && apk add python3
+RUN apk update && apk upgrade && apk add gcc g++ linux-headers py3-pip py3-setuptools python3 python3-dev 
 
 ENV host 0.0.0.0
 ENV port 8001
