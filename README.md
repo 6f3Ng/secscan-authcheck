@@ -21,6 +21,7 @@ docker-compose up -d
 cd example
 # 需要将 docker-compose.yml 中的 your-ip 替换为当前机器的ip，以便访问
 docker-compose up -d
+systemctl stop firewalld
 ```
 
 ### 流量捕获
